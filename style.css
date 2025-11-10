@@ -1,3 +1,7 @@
+/* -------------------------------- */
+/* --- 1. RESET & VARIABLES --- */
+/* -------------------------------- */
+
 body, h1, h2, h3, h4, p, ul {
     margin: 0;
     padding: 0;
@@ -13,86 +17,40 @@ html {
     scroll-behavior: smooth;
 }
 
+/* CSS CUSTOM PROPERTIES (VARIABLES) */
+:root {
+    --clr-primary: #5E548E;       /* Purple */
+    --clr-accent: #E87C00;        /* NEW Accessible Orange */
+    --clr-accent-hover: #d17000;  /* Darker orange for hover */
+    --clr-dark: #333;             /* Dark text */
+    --clr-dark-footer: #2b2d42;    /* Dark blue/grey footer */
+    --clr-light: #f4f4f9;         /* Light page background */
+    --clr-white: #ffffff;
+    --clr-grey-light: #e0e1dd;    /* Tag background */
+    --clr-grey-border: #ddd;
+
+    --font-body: 'Poppins', sans-serif;
+    --font-heading: 'Roboto Slab', serif;
+}
+
+
+/* -------------------------------- */
+/* --- 2. BASE & TYPOGRAPHY --- */
+/* -------------------------------- */
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9; /* A light, clean background */
-    color: #333; /* Dark grey for text for good readability */
-    line-height: 1.7; /* Standard line height for readability */
-}
-
-.header {
-    background-color: #ffffff;
-    padding: 1rem 5%; /* 1rem (16px) top/bottom, 5% left/right */
-    display: flex; /* Activate flexbox! */
-    justify-content: space-between; /* Pushes logo and nav to opposite ends */
-    align-items: center; /* Vertically centers the items */
-    border-bottom: 1px solid #ddd;
-    position: sticky; /* Makes the header stick to the top on scroll */
-    top: 0;
-    z-index: 100; /* Ensures the header stays above other content */
-}
-
-.logo {
-    font-family: 'Roboto Slab', serif; /* Use the bold font for the logo */
-    font-size: 1.5rem; /* 24px */
-    font-weight: 700;
-    color: #5E548E; /* A strong purple accent color */
-    text-decoration: none;
-}
-
-.navigation ul {
-    list-style: none; /* Removes the default bullet points */
-    display: flex; /* Makes the list items line up horizontally */
-    gap: 2rem; /* Adds 32px of space between the navigation links */
-}
-
-.navigation a {
-    text-decoration: none; /* Removes the default underline from links */
-    color: #333;
-    font-weight: 600;
-    font-size: 1rem; /* 16px */
-    transition: color 0.3s ease; /* Adds a smooth color change on hover */
-}
-
-.navigation a:hover {
-    color: #F8961E; /* An orange accent color for hover */
-}
-
-.hero {
-    height: 70vh; /* Takes up 70% of the viewport height */
-    display: flex; /* Use flexbox to center the content */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    /* Creates a dark overlay on the background image for readability.
-      Replace the placeholder URL with a real image.
-    */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/231942/FFFFFF?text=Modern+Tech+Background');
-    background-size: cover;
-    background-position: center;
-    padding: 0 2rem; /* Add padding for small screens */
-}
-
-.hero-content h1 {
-    font-family: 'Roboto Slab', serif;
-    font-size: 3.5rem; /* 56px */
-    margin-bottom: 0.5rem;
-}
-
-.hero-content .subtitle {
-    font-size: 1.25rem; /* 20px */
-    font-weight: 300;
-    max-width: 600px; /* Constrains the width of the text */
-    margin: 0 auto 2rem auto; /* Center the text and add space below */
+    font-family: var(--font-body);
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    line-height: 1.7; 
 }
 
 /* Reusable Call-to-Action button style */
 .cta-button {
     display: inline-block;
-    background-color: #F8961E; /* Orange accent */
-    color: white;
-    padding: 0.8rem 2rem; /* 12.8px top/bottom, 32px left/right */
+    background-color: var(--clr-accent); /* ACCESSIBLE ORANGE */
+    color: var(--clr-white);
+    padding: 0.8rem 2rem; 
     text-decoration: none;
     font-weight: 600;
     border-radius: 5px;
@@ -100,46 +58,167 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #f9a241;
-    transform: translateY(-3px); /* Lifts the button slightly */
+    background-color: var(--clr-accent-hover);
+    transform: translateY(-3px); 
 }
 
+
+/* -------------------------------- */
+/* --- 3. HEADER & NAVIGATION --- */
+/* -------------------------------- */
+
+.header {
+    background-color: var(--clr-white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--clr-grey-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+    text-decoration: none;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--clr-dark);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: var(--clr-accent);
+}
+
+/* HAMBURGER MENU STYLES (HIDDEN ON DESKTOP) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001; /* Above nav */
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    background: var(--clr-dark);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: var(--clr-dark);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    left: 0;
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(8px);
+}
+
+
+/* -------------------------------- */
+/* --- 4. HERO SECTION --- */
+/* -------------------------------- */
+
+.hero {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--clr-white);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/231942/FFFFFF?text=Modern+Tech+Background');
+    background-size: cover;
+    background-position: center;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content .subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+
+/* -------------------------------- */
+/* --- 5. ABOUT SECTION --- */
+/* -------------------------------- */
+
 .about-container {
-    padding: 4rem 5%; /* 64px top/bottom, 5% left/right */
-    background-color: #ffffff;
+    padding: 4rem 5%;
+    background-color: var(--clr-white);
 }
 
 .about-container h2 {
-    font-family: 'Roboto Slab', serif;
-    font-size: 2.5rem; /* 40px */
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 3rem; /* 48px */
+    margin-bottom: 3rem;
 }
 
 .about-flex-wrapper {
-    display: flex; /* Use flexbox to put image and text side-by-side */
-    align-items: center; /* Vertically center the image and text */
-    gap: 3rem; /* 48px of space between the image and text */
+    display: flex;
+    align-items: center;
+    gap: 3rem;
     max-width: 1000px;
-    margin: 0 auto; /* Center the whole content block */
+    margin: 0 auto;
 }
 
 .profile-picture {
     width: 250px;
     height: 250px;
-    border-radius: 50%; /* Makes the image a circle */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    border: 5px solid #5E548E; /* Add a purple border */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--clr-primary);
+    flex-shrink: 0; /* Prevents image from shrinking */
 }
 
 .about-text {
-    flex: 1; /* Allows the text block to grow and fill remaining space */
+    flex: 1;
 }
 
 .about-text h3 {
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--font-heading);
     font-size: 1.8rem;
-    color: #333;
+    color: var(--clr-dark);
+    margin-bottom: 1rem;
 }
 
 .about-text p {
@@ -147,13 +226,14 @@ body {
 }
 
 .about-text ul {
-    list-style-position: inside; /* Puts bullets inside the text block */
+    list-style-position: inside;
     margin-left: 1rem;
     margin-bottom: 1rem;
 }
 
+
 /* -------------------------------- */
-/* --- 5. SKILLS SECTION --- */
+/* --- 6. SKILLS SECTION (NEW) --- */
 /* -------------------------------- */
 
 .skills-container {
@@ -162,79 +242,99 @@ body {
 }
 
 .skills-container h2 {
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* More space */
 }
 
 .skills-grid {
-    display: flex; /* Use flexbox for the grid */
+    display: flex;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap; /* Allow skill categories to stack on small screens */
+    flex-wrap: wrap;
 }
 
 .skill-category {
-    background-color: white;
-    padding: 2rem;
+    background-color: var(--clr-white);
+    padding: 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    flex-basis: 400px; /* Each category tries to be 400px wide */
-    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    flex-basis: 450px; /* Give them a bit more space */
+    text-align: center;
 }
 
 .skill-category h3 {
-    font-family: 'Roboto Slab', serif;
-    color: #5E548E;
-    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    color: var(--clr-primary);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
 }
 
-.skill-category ul {
-    list-style: none;
+.skill-icons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
 }
 
-.skill-category li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #f0f0f0;
+.skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    gap: 0.5rem;
 }
+
+.skill-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.skill-icon span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--clr-dark);
+}
+
 
 /* -------------------------------- */
-/* --- 6. PROJECTS SECTION --- */
+/* --- 7. PROJECTS SECTION --- */
 /* -------------------------------- */
 
 .projects-container {
     padding: 4rem 5%;
-    background-color: #ffffff;
+    background-color: var(--clr-white);
     text-align: center;
 }
 
 .projects-container h2 {
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     margin-bottom: 2rem;
 }
 
 .project-gallery {
-    display: flex; /* Activate flexbox for the gallery */
-    justify-content: center; /* Center the cards */
-    gap: 2rem; /* Add space between the cards */
-    flex-wrap: wrap; /* Allows cards to wrap onto the next line */
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .project-card {
     background-color: #fdfdfd;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden; /* Ensures the image corners are rounded */
-    flex-basis: 350px; /* Each card will be 350px wide */
-    display: flex; /* Use flexbox to make the card a column */
+    overflow: hidden;
+    flex-basis: 350px;
+    display: flex;
     flex-direction: column;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px); /* Lifts the card slightly on hover */
+    transform: translateY(-10px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
@@ -249,7 +349,7 @@ body {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* This makes all cards the same height */
+    flex-grow: 1;
 }
 
 .project-content h3 {
@@ -260,40 +360,61 @@ body {
 .project-content p {
     font-size: 0.95rem;
     margin: 1rem 0;
-    flex-grow: 1; /* Pushes the tags to the bottom */
+    flex-grow: 1; /* Pushes tags/links to the bottom */
+}
+
+/* NEW PROJECT LINKS STYLES */
+.project-links {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.5rem; /* More space */
+}
+
+.project-link {
+    font-weight: 600;
+    color: var(--clr-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--clr-accent);
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: auto; /* Pushes tags to the very bottom */
 }
 
 .tag {
-    background-color: #e0e1dd;
-    color: #333;
+    background-color: var(--clr-grey-light);
+    color: var(--clr-dark);
     font-size: 0.8rem;
     font-weight: 600;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
 }
 
+
 /* -------------------------------- */
-/* --- 7. FOOTER & CONTACT --- */
+/* --- 8. FOOTER & CONTACT --- */
 /* -------------------------------- */
 
 .footer {
-    background-color: #2b2d42; /* A dark, professional blue/grey */
-    color: white;
+    background-color: var(--clr-dark-footer);
+    color: var(--clr-white);
     text-align: center;
     padding: 4rem 5%;
 }
 
 .footer h2 {
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--clr-white);
 }
 
 .footer p {
@@ -309,7 +430,7 @@ body {
 }
 
 .social-links a {
-    color: white;
+    color: var(--clr-white);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -318,37 +439,129 @@ body {
 }
 
 .social-links a:hover {
-    color: #F8961E; /* Orange accent on hover */
+    color: var(--clr-accent);
 }
 
 .copyright {
     font-size: 0.9rem;
     color: #aaa;
     margin-top: 3rem;
+    margin-bottom: 0;
 }
 
+
 /* -------------------------------- */
-/* --- 8. RESPONSIVE DESIGN --- */
+/* --- 9. ACCESSIBILITY FOCUS --- */
 /* -------------------------------- */
 
-/* This media query will apply styles for screens smaller than 768px (like tablets and phones) */
+/* Add a modern, visible focus ring for keyboard users */
+a:focus-visible,
+button:focus-visible,
+.project-link:focus-visible {
+    outline: 3px solid var(--clr-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+    color: var(--clr-primary); /* Ensure link text is visible */
+}
+
+/* Remove default outline for nav links, as we'll use color */
+.navigation a:focus-visible {
+    outline: none;
+    color: var(--clr-accent);
+}
+
+/* Specific fix for CTA button */
+.cta-button:focus-visible {
+    outline-color: var(--clr-accent-hover);
+}
+
+
+/* -------------------------------- */
+/* --- 10. RESPONSIVE DESIGN --- */
+/* -------------------------------- */
+
 @media (max-width: 768px) {
     .header {
-        flex-direction: column; /* Stacks the logo and nav vertically */
-        gap: 1rem;
-        position: static; /* Unstick the header on small screens */
+        /* Keep header sticky, but allow space for nav */
+        flex-wrap: wrap; 
+        padding: 1rem 5%;
+    }
+
+    /* Show the hamburger toggle */
+    .nav-toggle {
+        display: block;
+    }
+    
+    /* Styles for the X (close) icon */
+    .nav-open .hamburger {
+        background: transparent;
+    }
+    .nav-open .hamburger::before {
+        transform: rotate(45deg);
+    }
+    .nav-open .hamburger::after {
+        transform: rotate(-45deg);
+    }
+
+    .navigation {
+        display: none; /* Hide nav by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute; /* Make it a dropdown */
+        top: 75px; /* Adjust to match header height */
+        left: 0;
+        background: var(--clr-white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navigation.nav-open {
+        display: flex; /* Show nav when toggled */
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0;
+    }
+
+    .navigation li {
+        width: 100%;
+    }
+
+    .navigation a {
+        display: block;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--clr-grey-border);
+    }
+    .navigation li:last-child a {
+        border-bottom: none;
+    }
+
+    .hero {
+        height: 60vh;
     }
 
     .hero-content h1 {
-        font-size: 2.5rem; /* Make the main heading smaller */
+        font-size: 2.5rem;
     }
 
     .about-flex-wrapper {
-        flex-direction: column; /* Stacks the profile pic and text vertically */
+        flex-direction: column;
         text-align: center;
+    }
+    
+    .about-text ul {
+        text-align: left; /* Keep lists left-aligned */
     }
 
     .skills-grid {
         flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .skill-category {
+        flex-basis: 100%; /* Make skill cards full-width */
+        padding: 2rem;
     }
 }
