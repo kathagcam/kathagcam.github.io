@@ -14,8 +14,12 @@
 <body>
 
     <header class="header">
-        
         <div class="logo">Katherine Aguilar</div>
+        
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger"></span>
+        </button>
+        
         <nav class="navigation">
             <ul>
                 <li><a href="#about">About</a></li>
@@ -31,7 +35,7 @@
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1>Katherine Aguilar</h1>
-                <p class="subtitle">Software Quality Engineer specializing in Test Automation & Agentic AI</p>
+                <p class="subtitle">Lead Quality Engineer building high-scale automation frameworks and pioneering Agentic AI testing solutions.</p>
                 <a href="#projects" class="cta-button">View My Work</a>
             </div>
         </section>
@@ -56,26 +60,61 @@
 
         <section id="skills" class="skills-container">
             <h2>Core Expertise</h2>
+            
             <div class="skills-grid">
+                
                 <div class="skill-category">
-                    <h3>Quality Engineering</h3>
-                    <ul>
-                        <li>Test Automation Strategy</li>
-                        <li>CI/CD Pipeline Integration</li>
-                        <li>Selenium & Cypress & Playwright</li>
-                        <li>API & E2E Testing</li>
-                        <li>Agile & Scrum Methodologies</li>
-                    </ul>
+                    <h3>Quality Engineering & Automation</h3>
+                    <div class="skill-icons-grid">
+                        <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=Se" alt="Selenium Icon">
+                            <span>Selenium</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=Pw" alt="Playwright Icon">
+                            <span>Playwright</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=Cy" alt="Cypress Icon">
+                            <span>Cypress</span>
+                        </div>
+                         <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=API" alt="API Testing Icon">
+                            <span>API Testing</span>
+                        </div>
+                         <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=CI" alt="CI/CD Icon">
+                            <span>CI/CD</span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="skill-category">
                     <h3>AI & Development</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>JavaScript & TypeScript</li>
-                        <li>HTML5 & CSS3</li>
-                        <li>Git, Docker, & SQL</li>
-                    </ul>
+                    <div class="skill-icons-grid">
+                        <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=Py" alt="Python Icon">
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=JS" alt="JavaScript Icon">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=TS" alt="TypeScript Icon">
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=SQL" alt="SQL Icon">
+                            <span>SQL</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="https://placehold.co/48x48/f4f4f9/333?text=Git" alt="Git Icon">
+                            <span>Git</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -86,8 +125,14 @@
                 <div class="project-card">
                     <img src="https://placehold.co/600x400/007BFF/FFFFFF?text=AI+Support+Bot" alt="AI Customer Support Bot Project">
                     <div class="project-content">
-                        <h3>Project Name</h3>
-                        <p>Provide Context</p>
+                        <h3>Agentic AI Support Bot</h3>
+                        <p>A customer support bot that uses agentic AI to... [Describe the **Result**: e.g., "...resolve complex user queries, reducing support tickets by 40%."]</p>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
+                            <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        </div>
+
                         <div class="tags">
                             <span class="tag">Python</span>
                             <span class="tag">LangChain</span>
@@ -101,7 +146,12 @@
                     <img src="https://placehold.co/600x400/28A745/FFFFFF?text=Test+Framework" alt="Test Automation Framework Project">
                     <div class="project-content">
                         <h3>E-commerce Test Automation Framework</h3>
-                        <p>Designed and built a full E2E testing framework from scratch using Python and Selenium, integrated into a CI/CD pipeline to run nightly regression tests.</p>
+                        <p>The e-commerce platform suffered from frequent, flaky test failures (Situation). I architected a new E2E framework from scratch (Task) using Python, Selenium, and the Page Object Model (Action). This **reduced regression test runtime by 80%** and **stabilized the CI/CD pipeline** (Result).</p>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
+                            </div>
+
                         <div class="tags">
                             <span class="tag">Python</span>
                             <span class="tag">Selenium</span>
@@ -116,11 +166,16 @@
                     <div class="project-content">
                         <h3>Personal Portfolio Website</h3>
                         <p>A fully responsive portfolio site built from scratch to showcase my projects and skills. Designed with modern, semantic HTML5 and CSS Flexbox.</p>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">View Code</a>
+                        </div>
+                        
                         <div class="tags">
                             <span class="tag">HTML5</span>
                             <span class="tag">CSS3</span>
                             <span class="tag">Flexbox</span>
-                            <span class="tag">Responsive Design</span>
+                            <span class="tag">Responsive</span>
                         </div>
                     </div>
                 </div>
@@ -135,10 +190,21 @@
         <p>I'm always open to discussing new opportunities and interesting projects.</p>
         <a href="mailto:kathagcam@gmail.com" class="cta-button">Email Me</a>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/katherine-aguilar-4749b481/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/katherine-aguilar-4749b481/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
         <p class="copyright">&copy; 2025 Katherine Aguilar. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navigation = document.querySelector('.navigation');
+
+        navToggle.addEventListener('click', () => {
+            navigation.classList.toggle('nav-open');
+            const isExpanded = navigation.classList.contains('nav-open');
+            navToggle.setAttribute('aria-expanded', isExpanded);
+        });
+    </script>
 
 </body>
 </html>
