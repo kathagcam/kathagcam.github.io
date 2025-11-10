@@ -1,0 +1,354 @@
+body, h1, h2, h3, h4, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9; /* A light, clean background */
+    color: #333; /* Dark grey for text for good readability */
+    line-height: 1.7; /* Standard line height for readability */
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 1rem 5%; /* 1rem (16px) top/bottom, 5% left/right */
+    display: flex; /* Activate flexbox! */
+    justify-content: space-between; /* Pushes logo and nav to opposite ends */
+    align-items: center; /* Vertically centers the items */
+    border-bottom: 1px solid #ddd;
+    position: sticky; /* Makes the header stick to the top on scroll */
+    top: 0;
+    z-index: 100; /* Ensures the header stays above other content */
+}
+
+.logo {
+    font-family: 'Roboto Slab', serif; /* Use the bold font for the logo */
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: #5E548E; /* A strong purple accent color */
+    text-decoration: none;
+}
+
+.navigation ul {
+    list-style: none; /* Removes the default bullet points */
+    display: flex; /* Makes the list items line up horizontally */
+    gap: 2rem; /* Adds 32px of space between the navigation links */
+}
+
+.navigation a {
+    text-decoration: none; /* Removes the default underline from links */
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem; /* 16px */
+    transition: color 0.3s ease; /* Adds a smooth color change on hover */
+}
+
+.navigation a:hover {
+    color: #F8961E; /* An orange accent color for hover */
+}
+
+.hero {
+    height: 70vh; /* Takes up 70% of the viewport height */
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    /* Creates a dark overlay on the background image for readability.
+      Replace the placeholder URL with a real image.
+    */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/231942/FFFFFF?text=Modern+Tech+Background');
+    background-size: cover;
+    background-position: center;
+    padding: 0 2rem; /* Add padding for small screens */
+}
+
+.hero-content h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3.5rem; /* 56px */
+    margin-bottom: 0.5rem;
+}
+
+.hero-content .subtitle {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 300;
+    max-width: 600px; /* Constrains the width of the text */
+    margin: 0 auto 2rem auto; /* Center the text and add space below */
+}
+
+/* Reusable Call-to-Action button style */
+.cta-button {
+    display: inline-block;
+    background-color: #F8961E; /* Orange accent */
+    color: white;
+    padding: 0.8rem 2rem; /* 12.8px top/bottom, 32px left/right */
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f9a241;
+    transform: translateY(-3px); /* Lifts the button slightly */
+}
+
+.about-container {
+    padding: 4rem 5%; /* 64px top/bottom, 5% left/right */
+    background-color: #ffffff;
+}
+
+.about-container h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem; /* 40px */
+    text-align: center;
+    margin-bottom: 3rem; /* 48px */
+}
+
+.about-flex-wrapper {
+    display: flex; /* Use flexbox to put image and text side-by-side */
+    align-items: center; /* Vertically center the image and text */
+    gap: 3rem; /* 48px of space between the image and text */
+    max-width: 1000px;
+    margin: 0 auto; /* Center the whole content block */
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Makes the image a circle */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 5px solid #5E548E; /* Add a purple border */
+}
+
+.about-text {
+    flex: 1; /* Allows the text block to grow and fill remaining space */
+}
+
+.about-text h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.about-text ul {
+    list-style-position: inside; /* Puts bullets inside the text block */
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* -------------------------------- */
+/* --- 5. SKILLS SECTION --- */
+/* -------------------------------- */
+
+.skills-container {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.skills-container h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.skills-grid {
+    display: flex; /* Use flexbox for the grid */
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allow skill categories to stack on small screens */
+}
+
+.skill-category {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex-basis: 400px; /* Each category tries to be 400px wide */
+    text-align: left;
+}
+
+.skill-category h3 {
+    font-family: 'Roboto Slab', serif;
+    color: #5E548E;
+    margin-bottom: 1rem;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* -------------------------------- */
+/* --- 6. PROJECTS SECTION --- */
+/* -------------------------------- */
+
+.projects-container {
+    padding: 4rem 5%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.projects-container h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-gallery {
+    display: flex; /* Activate flexbox for the gallery */
+    justify-content: center; /* Center the cards */
+    gap: 2rem; /* Add space between the cards */
+    flex-wrap: wrap; /* Allows cards to wrap onto the next line */
+}
+
+.project-card {
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures the image corners are rounded */
+    flex-basis: 350px; /* Each card will be 350px wide */
+    display: flex; /* Use flexbox to make the card a column */
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Lifts the card slightly on hover */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* This makes all cards the same height */
+}
+
+.project-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    margin: 1rem 0;
+    flex-grow: 1; /* Pushes the tags to the bottom */
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: #e0e1dd;
+    color: #333;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+}
+
+/* -------------------------------- */
+/* --- 7. FOOTER & CONTACT --- */
+/* -------------------------------- */
+
+.footer {
+    background-color: #2b2d42; /* A dark, professional blue/grey */
+    color: white;
+    text-align: center;
+    padding: 4rem 5%;
+}
+
+.footer h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-links {
+    margin: 2rem 0;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #F8961E; /* Orange accent on hover */
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 3rem;
+}
+
+/* -------------------------------- */
+/* --- 8. RESPONSIVE DESIGN --- */
+/* -------------------------------- */
+
+/* This media query will apply styles for screens smaller than 768px (like tablets and phones) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stacks the logo and nav vertically */
+        gap: 1rem;
+        position: static; /* Unstick the header on small screens */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Make the main heading smaller */
+    }
+
+    .about-flex-wrapper {
+        flex-direction: column; /* Stacks the profile pic and text vertically */
+        text-align: center;
+    }
+
+    .skills-grid {
+        flex-direction: column;
+    }
+}
