@@ -327,18 +327,18 @@ body {
 .project-card {
     background-color: #fdfdfd;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     flex-basis: 350px;
     display: flex;
     flex-direction: column;
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .project-card img {
@@ -393,12 +393,13 @@ body {
 }
 
 .tag {
-    background-color: var(--clr-grey-light);
-    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    color: var(--clr-primary);
     font-size: 0.8rem;
     font-weight: 600;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
+    border: 1px solid var(--clr-primary); /* Add a subtle border */
 }
 
 
@@ -567,4 +568,20 @@ button:focus-visible,
         flex-basis: 100%; /* Make skill cards full-width */
         padding: 2rem;
     }
+}
+
+/* Add this to your CSS */
+.about-container,
+.skills-container,
+.projects-container {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(20px); /* Start 20px lower */
+}
+
+.about-container.is-visible,
+.skills-container.is-visible,
+.projects-container.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* Move back to original position */
 }
