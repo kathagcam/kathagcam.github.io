@@ -92,6 +92,10 @@ h1, h2, h3 { font-family: 'Roboto Slab', serif; letter-spacing: -0.02em; }
     display: inline;
 }
 .subtitle { font-size: 1.25rem; color: var(--clr-text-muted); margin-bottom: 3rem; max-width: 650px; }
+.subtitle strong {
+    color: var(--clr-text-main); /* Makes the names slightly brighter than the muted text */
+    font-weight: 600;
+}
 .hero-cta { display: flex; gap: 2rem; }
 
 .cta-button {
