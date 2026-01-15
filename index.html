@@ -172,8 +172,7 @@
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <h2 class="section-title">Get In Touch</h2>
-            <h3>Let's turn vision into high-scale reality.</h3>            
-            <div class="contact-buttons">
+            <h3>Let’s architect the future of <br><span class="text-gradient">Quality & AI</span> together.</h3>            <div class="contact-buttons">
                 <a href="https://www.linkedin.com/in/katherine-aguilar-4749b481/" target="_blank" class="btn-primary">LinkedIn</a>
                 <a href="mailto:kathagcam@gmail.com" class="btn-secondary">Send an Email</a>
             </div>
@@ -187,23 +186,47 @@
     </footer>
 
     <script>
+        // Selects sections to animate as the user scrolls
         const sections = document.querySelectorAll('.skills-container, .projects-container, .contact-container');
         
-        const observer = new IntersectionObserver(entries => {
+        const observerOptions = {
+            threshold: 0.15 // Triggers when 15% of the section is visible
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
                 }
             });
-        }, { threshold: 0.1 });
-
+        }, observerOptions);
+    
         sections.forEach(section => observer.observe(section));
-
+    
+        /* --- MOBILE NAVIGATION LOGIC --- */
         const navToggle = document.querySelector('.nav-toggle');
         const navigation = document.querySelector('.navigation');
+    
+        // Toggle Menu Open/Close
         navToggle?.addEventListener('click', () => {
+            // 'nav-open' on navigation slides the menu in
+            // 'nav-open' on navToggle animates the hamburger into an 'X'
             navigation.classList.toggle('nav-open');
+            navToggle.classList.toggle('nav-open');
+            
+            // Prevent background scrolling when menu is open
+            document.body.style.overflow = navigation.classList.contains('nav-open') ? 'hidden' : '';
+        });
+    
+        // Close menu automatically when a user clicks a link
+        document.querySelectorAll('.navigation a').forEach(link => {
+            link.addEventListener('click', () => {
+                navigation.classList.remove('nav-open');
+                navToggle.classList.remove('nav-open');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
         });
     </script>
+
 </body>
 </html>
