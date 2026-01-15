@@ -128,6 +128,18 @@ h1, h2, h3 { font-family: 'Roboto Slab', serif; letter-spacing: -0.02em; }
     flex-direction: column;
     gap: 3rem;
 }
+
+/* If the image is broken, hide it */
+.company-logo img {
+    text-indent: -10000px;
+    background: transparent;
+}
+
+/* Ensure the text still looks good even if the logo is missing */
+.badge-item {
+    min-height: 30px; 
+}
+
 .badge-number { font-size: 4rem; font-weight: 800; color: #fff; line-height: 0.9; }
 .badge-label { font-size: 0.75rem; text-transform: uppercase; color: var(--clr-text-muted); letter-spacing: 3px; }
 .badge-company { font-size: 1.6rem; font-weight: 700; color: var(--clr-text-main); opacity: 0.85; transition: 0.3s; }
