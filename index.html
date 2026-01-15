@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-    
     <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
     <link rel="shortcut icon" href="/assets/images/favicon.ico" />
 </head>
-
 <body>
 
     <header class="header">
@@ -34,7 +31,9 @@
     <main>
         <section class="hero-split" id="home">
             <div class="hero-main-text">
-                <h1 class="hero-title-one-line">Let’s architect the future of <br><span class="text-gradient">Quality & AI</span> together.</h1>
+                <h1 class="hero-title-one-line">
+                    Let’s architect the future of <span class="text-gradient">Quality & AI</span> together.
+                </h1>
                 <p class="subtitle">10+ years scaling distributed QE teams at Salesforce and Cars.com. Currently building the next generation of RAG-based automation.</p>
                 <div class="hero-cta">
                     <a href="#projects" class="cta-button">View Work</a>
@@ -60,7 +59,7 @@
         </section>
 
         <section id="skills" class="skills-container">
-            <h2>Core Expertise</h2>
+            <h2 class="section-title">Core Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Quality Engineering</h3>
@@ -120,7 +119,9 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="project-gallery">
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="AI Project">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="AI Project">
+                    </div>
                     <div class="project-content">
                         <h3>AI-Powered Electoral Analysis</h3>
                         <p>A specialized AI assistant designed to increase voter transparency using natural language and RAG architectures.</p>
@@ -133,7 +134,9 @@
                 </div>
                 
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" alt="QA Project">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" alt="QA Project">
+                    </div>
                     <div class="project-content">
                         <h3>E2E QE for AI Applications</h3>
                         <p>Robust automation framework using Playwright and TypeScript to validate RAG-based systems via POM architecture.</p>
@@ -145,7 +148,9 @@
                 </div>
             
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800" alt="Web Portfolio Design">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800" alt="Web Portfolio Design">
+                    </div>
                     <div class="project-content">
                         <h3>Engineer Brand Architecture</h3>
                         <p>A high-performance personal brand site designed to showcase senior-level engineering leadership and AI expertise.</p>
@@ -162,12 +167,11 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <section id="contact" class="contact-section">
         <div class="contact-container">
-            <h2>Get In Touch</h2>
+            <h2 class="section-title">Get In Touch</h2>
             <h3>Let's turn vision into high-scale reality.</h3>            
             <div class="contact-buttons">
                 <a href="https://www.linkedin.com/in/katherine-aguilar-4749b481/" target="_blank" class="btn-primary">LinkedIn</a>
@@ -183,7 +187,7 @@
     </footer>
 
     <script>
-        const sections = document.querySelectorAll('.skills-container, .projects-container');
+        const sections = document.querySelectorAll('.skills-container, .projects-container, .contact-container');
         
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -195,7 +199,6 @@
 
         sections.forEach(section => observer.observe(section));
 
-        // Basic Mobile Menu Toggle
         const navToggle = document.querySelector('.nav-toggle');
         const navigation = document.querySelector('.navigation');
         navToggle?.addEventListener('click', () => {
